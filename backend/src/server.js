@@ -1,4 +1,10 @@
 const express = require('express')
-const app = require('./app')
+const router = require('./routes')
 
-app.listen(PO)
+const app = express()
+
+app.use(express.json())
+app.use(router)
+
+const PORT = process.env.PORT || 2222
+app.listen(PORT, console.log(`Servidor rodando em:\nhttp://localhost:${PORT}`))
